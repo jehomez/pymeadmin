@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkListStore" id="opciones">
+    <columns>
+      <!-- column-name entry1 -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Enero</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Febrero</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Marzo</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Abril</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Mayo</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Junio</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Julio</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Agosto</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Septiembre</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Octubre</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Noviembre</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Diciembre</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="lista">
+    <columns>
+      <!-- column-name gchararray0 -->
+      <column type="gchararray"/>
+      <!-- column-name gchararray1 -->
+      <column type="gchararray"/>
+      <!-- column-name gchararray2 -->
+      <column type="gchararray"/>
+      <!-- column-name gchararray3 -->
+      <column type="gchararray"/>
+      <!-- column-name gchararray4 -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkWindow" id="ventana">
+    <property name="visible">True</property>
+    <property name="title" translatable="yes">Inventario de Artículos</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-always</property>
+    <property name="default_width">850</property>
+    <property name="default_height">600</property>
+    <property name="icon">articulos.png</property>
+    <signal name="destroy" handler="on_ventana_destroy"/>
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkToolbar" id="toolbar">
+            <property name="visible">True</property>
+            <property name="toolbar_style">both</property>
+            <property name="icon_size_set">True</property>
+            <child>
+              <object class="GtkToolButton" id="buscar">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Buscar</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-find</property>
+                <signal name="clicked" handler="on_buscar_clicked"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="imprimir">
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">Muestra una lista para imprimir (Alt+I)</property>
+                <property name="label" translatable="yes">Imprimir</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-print</property>
+                <accelerator key="i" signal="clicked" modifiers="GDK_MOD1_MASK"/>
+                <signal name="clicked" handler="on_imprimir_clicked"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkToolButton" id="cerrar">
+                <property name="visible">True</property>
+                <property name="tooltip_text" translatable="yes">Cierra la ventana actual (Alt+F4)</property>
+                <property name="label" translatable="yes">Cerrar</property>
+                <property name="use_underline">True</property>
+                <property name="stock_id">gtk-close</property>
+                <signal name="clicked" handler="on_cerrar_clicked"/>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="homogeneous">True</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hboxBusqueda">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkLabel" id="lblYear">
+                <property name="label" translatable="yes">Año:</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSpinButton" id="year">
+                <property name="can_focus">True</property>
+                <property name="invisible_char">•</property>
+                <property name="adjustment">ajuste_year</property>
+                <property name="snap_to_ticks">True</property>
+                <property name="numeric">True</property>
+                <property name="wrap">True</property>
+                <signal name="value_changed" handler="on_year_value_changed"/>
+              </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lblMes">
+                <property name="label" translatable="yes">Mes:</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkComboBox" id="mes">
+                <property name="model">opciones</property>
+                <signal name="changed" handler="on_mes_changed"/>
+                <child>
+                  <object class="GtkCellRendererText" id="cell"/>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+              <packing>
+                <property name="position">3</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow" id="scrolledwindow">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hscrollbar_policy">automatic</property>
+            <property name="vscrollbar_policy">automatic</property>
+            <child>
+              <object class="GtkTreeView" id="tree">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="model">lista</property>
+                <property name="reorderable">True</property>
+                <property name="search_column">0</property>
+                <child>
+                  <object class="GtkTreeViewColumn" id="tvcolumn0">
+                    <property name="sizing">autosize</property>
+                    <property name="title">Código</property>
+                    <property name="expand">True</property>
+                    <property name="clickable">True</property>
+                    <property name="alignment">0.5</property>
+                    <property name="reorderable">True</property>
+                    <property name="sort_indicator">True</property>
+                    <property name="sort_column_id">0</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="tvcell0">
+                        <property name="xalign">0</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">0</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="tvcolumn1">
+                    <property name="sizing">autosize</property>
+                    <property name="min_width">200</property>
+                    <property name="max_width">200</property>
+                    <property name="title">Articulo</property>
+                    <property name="expand">True</property>
+                    <property name="clickable">True</property>
+                    <property name="alignment">0.5</property>
+                    <property name="reorderable">True</property>
+                    <property name="sort_indicator">True</property>
+                    <property name="sort_column_id">1</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="tvcell1">
+                        <property name="xalign">0</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">1</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="tvcolumn2">
+                    <property name="sizing">autosize</property>
+                    <property name="fixed_width">115</property>
+                    <property name="title">Existencia Actual</property>
+                    <property name="expand">True</property>
+                    <property name="clickable">True</property>
+                    <property name="alignment">0.5</property>
+                    <property name="reorderable">True</property>
+                    <property name="sort_indicator">True</property>
+                    <property name="sort_column_id">2</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="tvcell2">
+                        <property name="xalign">1</property>
+                        <property name="alignment">right</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">2</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="tvcolumn3">
+                    <property name="sizing">autosize</property>
+                    <property name="fixed_width">100</property>
+                    <property name="title">Precio Unitario</property>
+                    <property name="expand">True</property>
+                    <property name="clickable">True</property>
+                    <property name="alignment">0.5</property>
+                    <property name="reorderable">True</property>
+                    <property name="sort_indicator">True</property>
+                    <property name="sort_column_id">3</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="tvcell3">
+                        <property name="xalign">1</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">3</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkTreeViewColumn" id="tvcolumn4">
+                    <property name="sizing">autosize</property>
+                    <property name="fixed_width">120</property>
+                    <property name="title">Total Bs.</property>
+                    <property name="expand">True</property>
+                    <property name="clickable">True</property>
+                    <property name="alignment">0.5</property>
+                    <property name="reorderable">True</property>
+                    <property name="sort_indicator">True</property>
+                    <property name="sort_column_id">4</property>
+                    <child>
+                      <object class="GtkCellRendererText" id="tvcell4">
+                        <property name="xalign">1</property>
+                      </object>
+                      <attributes>
+                        <attribute name="text">4</attribute>
+                      </attributes>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox1">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkLabel" id="label1">
+                <property name="visible">True</property>
+                <property name="xalign">0.99000000953674316</property>
+                <property name="label" translatable="yes">Total Bs.</property>
+              </object>
+              <packing>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="total">
+                <property name="width_request">200</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="editable">False</property>
+                <property name="invisible_char">•</property>
+                <property name="xalign">1</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="pack_type">end</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAdjustment" id="ajuste_year">
+    <property name="value">1990</property>
+    <property name="upper">2999</property>
+    <property name="step_increment">1</property>
+  </object>
+</interface>

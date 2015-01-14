@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkAboutDialog" id="dlgAcerca">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Acerca de</property>
+    <property name="resizable">False</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-always</property>
+    <property name="type_hint">normal</property>
+    <property name="program_name">PanAdmin</property>
+    <property name="version">11.01</property>
+    <property name="copyright" translatable="yes">Copyright 2010 Ing. Jesús Enrique Hómez Socorro</property>
+    <property name="comments" translatable="yes">Software para el control administrativo y productivo de panaderías</property>
+    <property name="license" translatable="yes">Bajo licencia GPL</property>
+    <property name="authors">Ing. Jesús Enrique Hómez Socorro 
+Desarrollador de Software
+jesusenriquehomez@gmail.com
+
+TSU Yusnán Alfonso Maldonado Durán
+Diseñador Gráfico
+</property>
+    <property name="documenters"></property>
+    <property name="translator_credits" translatable="yes">Ing. Jesús Enrique Hómez Socorro
+jesusenriquehomez@gmail.com</property>
+    <property name="wrap_license">True</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="dialog-vbox1">
+        <property name="visible">True</property>
+        <property name="spacing">2</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

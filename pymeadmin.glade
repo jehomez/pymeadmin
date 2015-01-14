@@ -1,0 +1,567 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkImage" id="image11">
+    <property name="visible">True</property>
+    <property name="icon_name">window-new</property>
+  </object>
+  <object class="GtkImage" id="image13">
+    <property name="visible">True</property>
+    <property name="stock">gtk-save</property>
+  </object>
+  <object class="GtkImage" id="image19">
+    <property name="visible">True</property>
+    <property name="icon_name">appointment-soon</property>
+  </object>
+  <object class="GtkImage" id="image22">
+    <property name="visible">True</property>
+    <property name="icon_name">emblem-downloads</property>
+  </object>
+  <object class="GtkImage" id="image23">
+    <property name="visible">True</property>
+    <property name="icon_name">software-update-available</property>
+  </object>
+  <object class="GtkImage" id="image25">
+    <property name="visible">True</property>
+    <property name="icon_name">system-run</property>
+  </object>
+  <object class="GtkImage" id="image27">
+    <property name="visible">True</property>
+    <property name="stock">gtk-go-up</property>
+  </object>
+  <object class="GtkImage" id="image28">
+    <property name="visible">True</property>
+    <property name="icon_name">accessories-text-editor</property>
+  </object>
+  <object class="GtkImage" id="image29">
+    <property name="visible">True</property>
+    <property name="icon_name">accessories-text-editor</property>
+  </object>
+  <object class="GtkImage" id="image30">
+    <property name="visible">True</property>
+    <property name="icon_name">accessories-text-editor</property>
+  </object>
+  <object class="GtkImage" id="image8">
+    <property name="visible">True</property>
+    <property name="icon_name">emblem-shared</property>
+  </object>
+  <object class="GtkWindow" id="ventana">
+    <property name="visible">True</property>
+    <property name="has_tooltip">True</property>
+    <property name="title" translatable="yes">PanAdmin 11.01</property>
+    <property name="window_position">center-always</property>
+    <property name="icon">tipodeoperaciones.png</property>
+    <property name="gravity">center</property>
+    <signal name="destroy" handler="on_ventana_destroy"/>
+    <child>
+      <object class="GtkVBox" id="vbox1">
+        <property name="visible">True</property>
+        <child>
+          <object class="GtkMenuBar" id="menubar_principal">
+            <property name="visible">True</property>
+            <child>
+              <object class="GtkMenuItem" id="menu_archivo">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Archivo</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu1">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_empresa">
+                        <property name="label" translatable="yes">Empresas</property>
+                        <property name="visible">True</property>
+                        <property name="image">image12</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="a" signal="activate"/>
+                        <signal name="activate" handler="on_item_empresa_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_deposito">
+                        <property name="label" translatable="yes">Dep&#xF3;sitos</property>
+                        <property name="visible">True</property>
+                        <property name="image">image5</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="d" signal="activate"/>
+                        <signal name="activate" handler="on_item_deposito_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_grupo">
+                        <property name="label" translatable="yes">Grupos de Inventario</property>
+                        <property name="visible">True</property>
+                        <property name="image">image6</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="g" signal="activate"/>
+                        <signal name="activate" handler="on_item_grupo_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_articulo">
+                        <property name="label" translatable="yes">Articulos</property>
+                        <property name="visible">True</property>
+                        <property name="image">image7</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="a" signal="activate"/>
+                        <signal name="activate" handler="on_item_articulo_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_recetas_panaderia">
+                        <property name="label" translatable="yes">Recetas de panaderia</property>
+                        <property name="visible">True</property>
+                        <property name="image">image24</property>
+                        <property name="use_stock">False</property>
+                        <property name="always_show_image">True</property>
+                        <accelerator key="r" signal="activate"/>
+                        <signal name="activate" handler="on_item_recetas_panaderia_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_recetas_pasteleria">
+                        <property name="label" translatable="yes">Recetas de tortas</property>
+                        <property name="visible">True</property>
+                        <property name="image">image26</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="t" signal="activate"/>
+                        <signal name="activate" handler="on_item_recetas_pasteleria_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_zona">
+                        <property name="label" translatable="yes">Zonas</property>
+                        <property name="visible">True</property>
+                        <property name="image">image2</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="z" signal="activate"/>
+                        <signal name="activate" handler="on_item_zona_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_tipo_proveedor">
+                        <property name="label" translatable="yes">Tipo de Proveedor</property>
+                        <property name="visible">True</property>
+                        <property name="image">image3</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="p" signal="activate" modifiers="GDK_MOD1_MASK"/>
+                        <signal name="activate" handler="on_item_tipo_proveedor_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_proveedor">
+                        <property name="label" translatable="yes">Proveedores</property>
+                        <property name="visible">True</property>
+                        <property name="image">image4</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="p" signal="activate"/>
+                        <signal name="activate" handler="on_item_proveedor_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_tipo_cliente">
+                        <property name="label" translatable="yes">Tipo de Cliente</property>
+                        <property name="visible">True</property>
+                        <property name="image">image10</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="c" signal="activate" modifiers="GDK_MOD1_MASK"/>
+                        <signal name="activate" handler="on_item_tipo_cliente_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_cliente">
+                        <property name="label" translatable="yes">Clientes</property>
+                        <property name="visible">True</property>
+                        <property name="image">image9</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="c" signal="activate"/>
+                        <signal name="activate" handler="on_item_cliente_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_operacion">
+                        <property name="label" translatable="yes">Tipos de Operaciones</property>
+                        <property name="visible">True</property>
+                        <property name="image">image14</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="o" signal="activate"/>
+                        <signal name="activate" handler="on_item_operacion_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_tarjetas_debito">
+                        <property name="label" translatable="yes">Tarjetas de D&#xE9;bito</property>
+                        <property name="visible">True</property>
+                        <property name="image">image15</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="d" signal="activate" modifiers="GDK_MOD1_MASK"/>
+                        <signal name="activate" handler="on_item_tarjetas_debito_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_tarjetas_credito">
+                        <property name="label" translatable="yes">Tarjetas de Cr&#xE9;dito</property>
+                        <property name="visible">True</property>
+                        <property name="image">image16</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="r" signal="activate" modifiers="GDK_MOD1_MASK"/>
+                        <signal name="activate" handler="on_item_tarjetas_credito_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_banco">
+                        <property name="label" translatable="yes">Bancos</property>
+                        <property name="visible">True</property>
+                        <property name="image">image17</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="b" signal="activate"/>
+                        <signal name="activate" handler="on_item_banco_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_horario">
+                        <property name="label" translatable="yes">Horario Laboral</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="image">image21</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="h" signal="activate"/>
+                        <signal name="activate" handler="on_item_horario_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_tipo_empleado">
+                        <property name="label" translatable="yes">Tipos de Empleados</property>
+                        <property name="visible">True</property>
+                        <property name="image">image20</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="e" signal="activate" modifiers="GDK_MOD1_MASK"/>
+                        <signal name="activate" handler="on_item_tipo_empleado_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_empleados">
+                        <property name="label" translatable="yes">Empleados</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="image">image18</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="e" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <signal name="activate" handler="on_item_empleados_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSeparatorMenuItem" id="separador">
+                        <property name="visible">True</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_salir">
+                        <property name="label">gtk-quit</property>
+                        <property name="visible">True</property>
+                        <property name="right_justified">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <property name="always_show_image">True</property>
+                        <accelerator key="w" signal="activate" modifiers="GDK_CONTROL_MASK"/>
+                        <signal name="activate" handler="on_item_salir_activate"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="menu_procesos">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Procesos</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu2">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_asistencias">
+                        <property name="label" translatable="yes">Asistencia de Empleados</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="image">image19</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="s" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
+                        <signal name="activate" handler="on_item_asistencias_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_movimiento">
+                        <property name="label" translatable="yes">Entrada y Salida de Inventario</property>
+                        <property name="visible">True</property>
+                        <property name="image">image8</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="i" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
+                        <signal name="activate" handler="on_item_movimiento_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_despachos">
+                        <property name="label" translatable="yes">Despacho de Materia Prima</property>
+                        <property name="visible">True</property>
+                        <property name="image">image22</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="d" signal="activate"/>
+                        <signal name="activate" handler="on_item_despachos_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_compra">
+                        <property name="label" translatable="yes">Compra a Proveedores</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="image">image23</property>
+                        <property name="use_stock">False</property>
+                        <property name="always_show_image">True</property>
+                        <accelerator key="c" signal="activate"/>
+                        <signal name="activate" handler="on_item_compra_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_venta">
+                        <property name="label" translatable="yes">Emisi&#xF3;n de Facturas de Venta</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="image">image11</property>
+                        <property name="use_stock">False</property>
+                        <accelerator key="v" signal="activate" modifiers="GDK_SHIFT_MASK | GDK_CONTROL_MASK"/>
+                        <signal name="activate" handler="on_item_venta_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_produccion_panaderia">
+                        <property name="label" translatable="yes">Producci&#xF3;n Diaria</property>
+                        <property name="visible">True</property>
+                        <property name="image">image25</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_item_produccion_panaderia_activate"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="menu_reportes">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Reportes</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu5">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_libro_ventas">
+                        <property name="label" translatable="yes">Libro de Ventas</property>
+                        <property name="visible">True</property>
+                        <property name="image">image28</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_item_libro_ventas_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_libro_compras">
+                        <property name="label" translatable="yes">Libro de Compras</property>
+                        <property name="visible">True</property>
+                        <property name="image">image29</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_item_libro_compras_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_libro_inventario">
+                        <property name="label" translatable="yes">Inventario Valorizado</property>
+                        <property name="visible">True</property>
+                        <property name="image">image30</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_item_libro_inventario_activate"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="menu_base_de_datos">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Base de datos</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu4">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_respaldar">
+                        <property name="label" translatable="yes">Respaldar</property>
+                        <property name="visible">True</property>
+                        <property name="image">image13</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_item_respaldar_activate"/>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_restaurar">
+                        <property name="label" translatable="yes">Restaurar</property>
+                        <property name="visible">True</property>
+                        <property name="image">image27</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_item_restaurar_activate"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="menu_opciones">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">_Opciones</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu6">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_configurar_ids">
+                        <property name="label" translatable="yes">Configurar IDS</property>
+                        <property name="visible">True</property>
+                        <property name="image">image31</property>
+                        <property name="use_stock">False</property>
+                        <signal name="activate" handler="on_item_configurar_ids_activate"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkMenuItem" id="menu_ayuda">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">Ay_uda</property>
+                <property name="use_underline">True</property>
+                <child type="submenu">
+                  <object class="GtkMenu" id="menu3">
+                    <property name="visible">True</property>
+                    <child>
+                      <object class="GtkImageMenuItem" id="item_autor">
+                        <property name="label">gtk-about</property>
+                        <property name="visible">True</property>
+                        <property name="use_underline">True</property>
+                        <property name="use_stock">True</property>
+                        <signal name="activate" handler="on_item_autor_activate"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="image1">
+            <property name="visible">True</property>
+            <property name="pixbuf">fondo1024x690.jpg</property>
+          </object>
+          <packing>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkStatusbar" id="statusbar_principal">
+            <property name="visible">True</property>
+            <property name="spacing">2</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkImage" id="image12">
+    <property name="visible">True</property>
+    <property name="icon_name">user-home</property>
+  </object>
+  <object class="GtkImage" id="image5">
+    <property name="visible">True</property>
+    <property name="pixbuf">deposito.png</property>
+  </object>
+  <object class="GtkImage" id="image6">
+    <property name="visible">True</property>
+    <property name="pixbuf">grupoinventario.png</property>
+  </object>
+  <object class="GtkImage" id="image7">
+    <property name="visible">True</property>
+    <property name="pixbuf">articulos.png</property>
+  </object>
+  <object class="GtkImage" id="image24">
+    <property name="visible">True</property>
+    <property name="icon_name">document-properties</property>
+  </object>
+  <object class="GtkImage" id="image26">
+    <property name="visible">True</property>
+    <property name="stock">gtk-missing-image</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="icon_name">applications-internet</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="pixbuf">grupoproveedores.png</property>
+  </object>
+  <object class="GtkImage" id="image4">
+    <property name="visible">True</property>
+    <property name="pixbuf">proveedores.png</property>
+  </object>
+  <object class="GtkImage" id="image10">
+    <property name="visible">True</property>
+    <property name="pixbuf">tipo-de-clientes.png</property>
+  </object>
+  <object class="GtkImage" id="image9">
+    <property name="visible">True</property>
+    <property name="pixbuf">clientes.png</property>
+  </object>
+  <object class="GtkImage" id="image14">
+    <property name="visible">True</property>
+    <property name="pixbuf">tipodeoperaciones.png</property>
+  </object>
+  <object class="GtkImage" id="image15">
+    <property name="visible">True</property>
+    <property name="pixbuf">tarjetadebito.png</property>
+  </object>
+  <object class="GtkImage" id="image16">
+    <property name="visible">True</property>
+    <property name="pixbuf">tarjetascreditos.png</property>
+  </object>
+  <object class="GtkImage" id="image17">
+    <property name="visible">True</property>
+    <property name="pixbuf">bancos.png</property>
+  </object>
+  <object class="GtkImage" id="image21">
+    <property name="visible">True</property>
+    <property name="icon_name">appointment-soon</property>
+  </object>
+  <object class="GtkImage" id="image20">
+    <property name="visible">True</property>
+    <property name="icon_name">preferences-desktop-theme</property>
+  </object>
+  <object class="GtkImage" id="image18">
+    <property name="visible">True</property>
+    <property name="icon_name">contact-new</property>
+  </object>
+  <object class="GtkImage" id="image31">
+    <property name="visible">True</property>
+    <property name="stock">gtk-preferences</property>
+  </object>
+</interface>
