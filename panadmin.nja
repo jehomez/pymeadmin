@@ -1,0 +1,18 @@
+{
+  "mainFile": ".py", 
+  "name": "panadmin", 
+  "license": "GNU General Public License v3", 
+  "url": "", 
+  "pythonPath": "python", 
+  "supported-extensions": [
+    ".py", 
+    ".html", 
+    ".jpg", 
+    ".png", 
+    ".ui", 
+    ".css", 
+    ".json"
+  ], 
+  "project-type": "", 
+  "description": ""
+}
